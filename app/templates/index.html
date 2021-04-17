@@ -1,1 +1,21 @@
-<h1>Testing index file </h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% if title %}
+        <title> {{ title }}</title>
+        {% else %}
+        <title> Welcome to Bullet-News </title>
+        {% endif %}
+    </head>
+    <body>
+      <h3> Sources</h3>
+      <ul>
+         {% for all_source in sources %}
+             <li>{{ all_source.name}}</li>
+         {% endfor %}
+     </ul>
+    </body>
+</html>
+
+
