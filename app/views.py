@@ -7,6 +7,7 @@ def index ():
   '''
   View root page function returns the index page
   '''
+  title = 'Welcome to Bullet-News'
   return render_template('index.html')
 
 @app.route('/sources/<sources_id>')
