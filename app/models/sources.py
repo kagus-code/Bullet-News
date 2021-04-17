@@ -8,3 +8,14 @@ class Sources :
     self.description = description
     self.url =url
     self.category = category
+
+class Article :
+  '''
+  Articles class to define articles object
+  '''
+
+  def __init__(self,image,description,time,url):
+    self.image = image
+    self.description = description
+    self.time = time
+    self.url = url

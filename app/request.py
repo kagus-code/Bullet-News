@@ -8,6 +8,7 @@ apiKey = app.config['NEWS_API_KEY']
 
 #Getting the sources base url
 base_url = app.config["SOURCES_API_BASE_URL"]
+article_url = app.config["ARTICLE_BASE_URL"]
 
 def get_sources():
   '''
@@ -43,6 +44,46 @@ def process_results(sources_list):
 
 
   return sources_results  
+
+def get_articles(source):
+  get_article_url = article_url.format(source,apiKey)
+
+  with urllib.request.urlopen(get_article_url) as url:
+    article_data = url.read()
+    article_data_response = json.loads(article_data)
+
+    article_results =None
+
+    if article_data_response['articles']:
+      article_result_list = article_data_response['articles']
+      article_results = process_articles(article_result_list)
+
+  return article_results
+
+def process_articles(article_list):
+  '''
+  function that processes the article result and transorm them to a list of objects 
+  '''
+
+  article_results = []
+
+  for article_item in article_list:
+    image = article_item.get('urlToImage')
+    description = article_item.get('description')
+    time = article_item.get('"publishedAt')
+    url = article_item.get('url')
+
+    if image
+        article_object = Article(image,description,time,url)
+        article_results.append(article_object)
+
+    return article_results
+
+
+
+
+    
+
     
 
 
