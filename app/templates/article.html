@@ -1,37 +1,25 @@
 {% extends 'base.html'%}
 
 
-
-
-
 {% block content %}
-<h1>this is the article page</h1>
 
 
   {% for art in news %}
-  <div class="container-fluid"> 
-    
-  <div class="blog-post">
-    <div class="blog-post__img">
-      <img src="{{art.image}}" alt="article image">
-    </div>
-    <div class="blog-post__info">
-      <div class="blog-post__date">
-        <span>{{art.time[:10]}}</span>
-      
-      </div>
-      <h1 class="blog-post__title">
-        shark sighting
-      </h1> 
-      <p class="blog-post__Text">
-        {{ art.description}}
-  
-      </p>
-      <a href="{{art.url}}" class="blog-post__cta">Read more</a> 
-  
+
+
+<div class="col-md-4">
+
+  <div class="card" style="width: 25rem;">
+    <img style="max-width: 30rem; max-height: 30rem;" class="card-img-top img-responsive" src="{{art.image}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Published on {{art.time [:10] }}</h5>
+      <p class="card-text">{{ art.description}}.</p>
+       <a href="{{art.url}}" class="btn btn-primary">Read more</a>
     </div>
   </div>
 </div>
+<br>
+
 
      
   {% endfor %}
