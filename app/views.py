@@ -1,6 +1,7 @@
 from flask import render_template
 from app import app
 from .request import get_sources
+from .request import get_articles
 
 #Views
 @app.route('/')
@@ -14,9 +15,12 @@ def index ():
   title = 'Welcome to Bullet-News'
   return render_template('index.html',title=title,sources = all_sources)
 
-@app.route('/sources/<sources_id>')
-def sources(sources_id):
+@app.route('/article')
+def articles():
   '''
-  View sources page function that returns the sources and details page
+  View articles page function that returns the articles and details page
   '''
-  return render_template('sources.html',id = sources_id)
+  source_article = get_articles('bbc-news')
+  print(source_article)
+
+  return render_template('article.html',news=source_article)

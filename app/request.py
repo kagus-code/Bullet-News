@@ -2,6 +2,7 @@ from app import app
 import urllib.request,json
 from .models import sources
 Sources = sources.Sources
+Article = sources.Article
 
 #getting api key
 apiKey = app.config['NEWS_API_KEY']
@@ -73,11 +74,11 @@ def process_articles(article_list):
     time = article_item.get('"publishedAt')
     url = article_item.get('url')
 
-    if image
+    if image:
         article_object = Article(image,description,time,url)
         article_results.append(article_object)
 
-    return article_results
+  return article_results
 
 
 
