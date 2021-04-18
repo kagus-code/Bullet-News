@@ -15,12 +15,12 @@ def index ():
   title = 'Welcome to Bullet-News'
   return render_template('index.html',title=title,sources = all_sources)
 
-@app.route('/article')
-def articles():
+@app.route('/article/<source>')
+def articles(source):
   '''
   View articles page function that returns the articles and details page
   '''
-  source_article = get_articles('bbc-news')
+  source_article = get_articles(source)
   print(source_article)
 
   return render_template('article.html',news=source_article)
