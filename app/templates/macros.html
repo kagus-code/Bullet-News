@@ -1,31 +1,31 @@
 {% macro displaySourcesList(sources_list)%}
-    
+    {% for all_source in sources_list %}
 
-         <div class="container-fluid">
+         <div class="col-md-12">
            <div class="row">
-            {% for all_source in sources_list %}
-             <div class="col-md-4">
+             <div style="box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+             0 17px 50px 0 rgba(0, 0, 0, 0.19);" >
 
               <div class="card">
                 <div class="card-header">
                   <h2 class="text-center"><a href="/article/{{all_source.id}}">{{ all_source.name}}</a> </h2>
                 </div>
                 <hr>
+                <div style="padding-left: 2rem;">
                   <div class="card-body"  >
                     <p>{{ all_source.description}}</p>
                     <P><a href="/article/{{all_source.id}}">see articles from this source</a></P>
                 </div>
                 <div class="card-footer mdb-color text-center">
+                  <h3>Category : {{all_source.category}}</h3>
                   <P><a href="{{all_source.url}}">Visit {{all_source.name}} website</a></P>
                 </div>
-              
             </div>
 
-
-
+          </div>
              </div>
-             {% endfor %}  
-           </div>
+
+            </div>
          </div>
     
 
@@ -39,6 +39,6 @@
 
 
 
-    
+    {% endfor %}  
 
 {% endmacro %}
