@@ -1,10 +1,10 @@
-from flask import render_template
-from app import app
-from .request import get_sources
-from .request import get_articles
+from flask import render_template,request
+from . import main
+from ..request import get_sources
+from ..request import get_articles
 
 #Views
-@app.route('/')
+@main.route('/')
 def index ():
   '''
   View root page function returns the index page
@@ -15,7 +15,7 @@ def index ():
   title = 'Welcome to Bullet-News'
   return render_template('index.html',title=title,sources = all_sources)
 
-@app.route('/article/<source>')
+@main.route('/article/<source>')
 def articles(source):
   '''
   View articles page function that returns the articles and details page

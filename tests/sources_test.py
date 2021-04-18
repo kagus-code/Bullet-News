@@ -1,5 +1,5 @@
 import unittest
-from sources import Sources
+from app.models import Sources
 
 
 class SourcesTest(unittest.TestCase):
@@ -17,5 +17,3 @@ class SourcesTest(unittest.TestCase):
     self.assertTrue(isinstance(self.new_source,Sources))  
     
 
-if __name__ == '__main__':
-    unittest.main()
