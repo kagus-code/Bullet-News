@@ -1,12 +1,40 @@
 {% extends 'base.html'%}
 
+
+
+
+
 {% block content %}
 <h1>this is the article page</h1>
 
-<ul>
+
   {% for art in news %}
-      <li>{{ art.description}}</li>
+  <div class="container-fluid"> 
+    
+  <div class="blog-post">
+    <div class="blog-post__img">
+      <img src="{{art.image}}" alt="article image">
+    </div>
+    <div class="blog-post__info">
+      <div class="blog-post__date">
+        <span>{{art.time[:10]}}</span>
+      
+      </div>
+      <h1 class="blog-post__title">
+        shark sighting
+      </h1> 
+      <p class="blog-post__Text">
+        {{ art.description}}
+  
+      </p>
+      <a href="{{art.url}}" class="blog-post__cta">Read more</a> 
+  
+    </div>
+  </div>
+</div>
+
+     
   {% endfor %}
-</ul>
+
 
 {% endblock%}

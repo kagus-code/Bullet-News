@@ -71,7 +71,7 @@ def process_articles(article_list):
   for article_item in article_list:
     image = article_item.get('urlToImage')
     description = article_item.get('description')
-    time = article_item.get('"publishedAt')
+    time = article_item.get('publishedAt')
     url = article_item.get('url')
 
     if image:
