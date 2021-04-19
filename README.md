@@ -52,7 +52,7 @@ https://buzz-news.herokuapp.com/
 
 
 ### Known bugs 
-- some of the articles retrieved from the [NewsApi] (https://newsapi.org/) have no images. Incase of any more issues use the contact details provided above
+- some of the articles retrieved from the [NewsApi](https://newsapi.org/) have no images. Incase of any more issues use the contact details provided above
 
 ### License
 
