@@ -5,7 +5,7 @@
 #### By **Eston Kagwima**
 
 ## Description
-You dont have to be frustrated when you miss the news!! This application utilises the [NewsApi] (https://newsapi.org/) to help you list and preview news articles from various sources around the world and all relevant cartegories you may be interested in. It will also allow you to visit the official website of the news source and readmore about any selected  article . 
+You dont have to be frustrated when you miss the news!! This application utilises the [News Api](https://newsapi.org/) to help you list and preview news articles from various sources around the world and all relevant cartegories you may be interested in. It will also allow you to visit the official website of the news source and readmore about any selected  article . 
 
 ## Behaviour Driven Development(BDD)
 
@@ -37,9 +37,9 @@ Features:
 
 - Python3.9
 - Flask
-- Bootstrap
+- Flask-Bootstrap
 - HTML
-- CSS
+
 
 ## link to live site on  HEROKU
 
