@@ -1,7 +1,7 @@
 import urllib.request,json
-from .models import sources
-Sources = sources.Sources
-Article = sources.Article
+from .models import Sources
+from .models import Article
+
 
 #getting api key
 apiKey = None
